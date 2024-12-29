@@ -44,7 +44,7 @@ with st.form("user_form"):
             new_data = {"Index":index, "Customer Id":Customer_id,"First Name":First_Name,"Last Name": Last_name, "Email":Email,"Subscription Date":Subscription_Date,"Website": Website}
            
            
-            dataset = dataset.append(new_data, ignore_index=True)
+            dataset = pd.concat([dataset, new_data], ignore_index=True)
 
             # Save updated dataset to CSV
             dataset.to_csv(data_file, index=False)
